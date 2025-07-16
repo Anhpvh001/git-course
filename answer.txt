@@ -1,0 +1,8 @@
+a. 
+git config --global user.name "VietAnhDev"
+git config --global user.email "huuvietanh2107@gmail.com"
+
+b.
+git config user.name "pw-Anh"
+
+
