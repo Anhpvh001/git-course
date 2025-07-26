@@ -1,0 +1,65 @@
+Bài 1.
+git commit --amend: thay đổi commit gần nhất có thể ghi đè hoặc sửa message
+git commit --amend -m "message": thay đổi trực tiếp commit gần nhất và truyền message.
+git reset HEAD~1 : xoá commit gần nhất từ repo đẩy về vùng working directory
+git restore --staged <file_name>: chuyển file từ vùng staging về working directory
+----------------------------------------------------------------------------------------
+Bài 2. 
+a. tạo file1,file2,file3
+    working directory: file1,file2,file3
+    staging: epmty
+    repo: epmty
+b. git init
+    working directory: file1,file2,file3
+    staging: epmty
+    repo: epmty
+c. git commit -m"init project"
+    working directory: file1,file2,file3
+    staging: epmty
+    repo: epmty
+d. git add file1
+    working directory: file2,file3
+    staging: file1
+    repo: epmty
+e. git commit -m"add file"
+    working directory: file2,file3
+    staging: epmty
+    repo: file1
+f. git add .
+    working directory: epmty
+    staging: file2, file3
+    repo: file1
+g. git restore --staged file2
+    working directory: file2
+    staging: file3
+    repo: file1
+h. git commit -m"add all files"
+    working directory: empty
+    staging: file2, file3
+    repo: file1
+f. git reset HEAD~1
+    working directory: file1
+    staging: file2,file3
+    repo: empty
+----------------------------------------------------------------------------------------
+Bài 3. 
+1. git init
+    working directory: empty
+    staging: empty
+    repo: empty
+2. Tạo file1.txt, file2.txt, oops/file3.txt.
+    working directory: file1.txt, file2.txt, oops/file3.txt
+    staging: empty
+    repo: empty
+3. trong file .gitignore , thêm vào 2 dòng file1.txt, oops/
+    working directory: file2.txt
+    staging: empty
+    repo: empty
+4. chạy lệnh git add .
+    working directory: empty
+    staging: file2.txt
+    repo: empty
+5. chạy lệnh git init -m"init project"
+    working directory: empty
+    staging: empty
+    repo: file2.txt
